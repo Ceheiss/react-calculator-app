@@ -1,11 +1,13 @@
 import React from 'react';
 import './Number.css';
+import { connect } from 'react-redux';
+import { enterOperator } from '../../actions';
 
-const Number = ({ children, elementId }) => {
+const Number = ({ children, elementId, enterOperator }) => {
   return (
     <div
       id={elementId}
-      onClick={() => console.log('clicked number')}
+      onClick={() => enterOperator(children)}
       className="Number button"
     >
       {children}
@@ -13,4 +15,9 @@ const Number = ({ children, elementId }) => {
   );
 };
 
-export default Number;
+const mapStateToProps = (state) => {
+  console.log('states: ', state);
+  return { state };
+};
+
+export default connect(mapStateToProps, { enterOperator })(Number);

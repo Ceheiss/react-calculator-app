@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.css';
-import Number from './Number/Number';
-import Equals from './Equals/Equals';
-import Operator from './Operator/Operator';
-import Clear from './Clear/Clear';
-import Display from './Display/Display';
+import Number from '../Number/Number';
+import Equals from '../Equals/Equals';
+import Operator from '../Operator/Operator';
+import Clear from '../Clear/Clear';
+import Display from '../Display/Display';
 
 function App() {
   return (
     <div className="App">
       <h1>Calculator</h1>
-      <Display elementId="display">012342</Display>
+      <Display elementId="display" />
       <div className="wrapper">
         <Number elementId="zero">0</Number>
         <Number elementId="one">1</Number>
