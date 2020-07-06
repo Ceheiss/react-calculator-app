@@ -6,7 +6,7 @@ import Operator from '../Operator/Operator';
 import Clear from '../Clear/Clear';
 import Display from '../Display/Display';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <h1>Calculator</h1>
@@ -32,6 +32,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;

@@ -12,8 +12,15 @@ export const enterOperator = (operator) => {
   };
 };
 
-export const evaluate = () => {
+export const evaluate = (operationString) => {
   return {
     type: 'EVALUATE',
+    payload: operationString,
+  };
+};
+
+export const clear = () => {
+  return {
+    type: 'CLEAR',
   };
 };

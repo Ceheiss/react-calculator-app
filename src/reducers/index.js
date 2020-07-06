@@ -6,9 +6,23 @@ const operationStringReducer = (state = '', action) => {
       return [...state, action.payload].join('');
     case 'ENTER_OPERATOR':
       return [...state, action.payload].join('');
+    case 'CLEAR':
+      return '0';
     default:
       return state;
   }
 };
 
-export default combineReducers({ operationString: operationStringReducer });
+const evaluationReducer = (state = '', action) => {
+  switch (action.type) {
+    case 'EVALUATE':
+      return String(eval(action.payload));
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({
+  operationString: operationStringReducer,
+  result: evaluationReducer,
+});

@@ -15,9 +15,4 @@ const Number = ({ children, elementId, enterOperator }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  console.log('states: ', state);
-  return { state };
-};
-
-export default connect(mapStateToProps, { enterOperator })(Number);
+export default connect(null, { enterOperator })(Number);

@@ -1,16 +1,14 @@
 import React from 'react';
 import './Clear.css';
+import { connect } from 'react-redux';
+import { clear } from '../../actions';
 
-const Clear = ({ children, elementId }) => {
+const Clear = ({ children, elementId, clear }) => {
   return (
-    <div
-      id={elementId}
-      onClick={() => console.log('clicked clear')}
-      className="Clear button"
-    >
+    <div id={elementId} onClick={() => clear()} className="Clear button">
       {children}
     </div>
   );
 };
 
-export default Clear;
+export default connect(null, { clear })(Clear);

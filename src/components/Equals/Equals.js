@@ -1,11 +1,13 @@
 import React from 'react';
 import './Equals.css';
+import { connect } from 'react-redux';
+import { evaluate } from '../../actions';
 
-const Equals = ({ children, elementId }) => {
+const Equals = ({ children, elementId, evaluate, operationString }) => {
   return (
     <div
       id={elementId}
-      onClick={() => console.log('clicked equals')}
+      onClick={() => evaluate(operationString)}
       className="Equals button"
     >
       {children}
@@ -13,4 +15,10 @@ const Equals = ({ children, elementId }) => {
   );
 };
 
-export default Equals;
+const mapStateToProps = (state) => {
+  return {
+    operationString: state.operationString,
+  };
+};
+
+export default connect(mapStateToProps, { evaluate })(Equals);

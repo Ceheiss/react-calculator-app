@@ -1,11 +1,21 @@
 import React from 'react';
 import './Operator.css';
+import { connect } from 'react-redux';
+import { enterOperator } from '../../actions';
 
-const Operator = ({ children, elementId }) => {
+const Operator = ({ children, elementId, enterOperator }) => {
+  let operator;
+
+  if (children === 'x') {
+    operator = '*';
+  } else {
+    operator = children;
+  }
+
   return (
     <div
       id={elementId}
-      onClick={() => console.log('clicked operator')}
+      onClick={() => enterOperator(operator)}
       className="Operator button"
     >
       {children}
@@ -13,4 +23,4 @@ const Operator = ({ children, elementId }) => {
   );
 };
 
-export default Operator;
+export default connect(null, { enterOperator })(Operator);
