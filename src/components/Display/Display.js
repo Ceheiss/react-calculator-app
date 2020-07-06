@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 const Display = ({ elementId, operationString, result }) => {
   return (
-    <div id={elementId} className="Display">
-      <div>{result}</div>
+    <div className="Display">
+      <div id={elementId}>{result}</div>
       <div>{operationString || '0'}</div>
     </div>
   );
