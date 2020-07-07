@@ -1,13 +1,13 @@
 import React from 'react';
 import './Number.css';
 import { connect } from 'react-redux';
-import { enterOperator } from '../../actions';
+import { enterValue } from '../../actions';
 
-const Number = ({ children, elementId, enterOperator }) => {
+const Number = ({ children, elementId, enterValue }) => {
   return (
     <div
       id={elementId}
-      onClick={() => enterOperator(children)}
+      onClick={() => enterValue(children)}
       className="Number button"
     >
       {children}
@@ -15,4 +15,4 @@ const Number = ({ children, elementId, enterOperator }) => {
   );
 };
 
-export default connect(null, { enterOperator })(Number);
+export default connect(null, { enterValue })(Number);
