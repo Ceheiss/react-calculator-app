@@ -13,6 +13,21 @@ const operationStringReducer = (state = '', action) => {
   }
 };
 
+const lastDigitReducer = (state = '', action) => {
+  switch (action.type) {
+    case 'ENTER_VALUE':
+      return action.payload;
+    case 'ENTER_OPERATOR':
+      return action.payload;
+    case 'EVALUATE':
+      return String(eval(action.payload));
+    case 'CLEAR':
+      return '';
+    default:
+      return state;
+  }
+};
+
 const evaluationReducer = (state = '', action) => {
   switch (action.type) {
     case 'EVALUATE':
@@ -27,4 +42,5 @@ const evaluationReducer = (state = '', action) => {
 export default combineReducers({
   operationString: operationStringReducer,
   result: evaluationReducer,
+  lastDigit: lastDigitReducer,
 });
