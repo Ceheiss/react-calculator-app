@@ -19,8 +19,6 @@ export const evaluate = (operationString) => {
   };
 };
 
-export const lastEnteredValue = () => {};
-
 export const clear = () => {
   return {
     type: 'CLEAR',
