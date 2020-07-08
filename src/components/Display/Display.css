@@ -1,4 +1,21 @@
 .Display {
-  background: #333;
+  background: black;
   color: white;
+  height: 75px;
+  padding-left: 10px;
+  font-family: 'Quantico', sans-serif;
+  overflow: scroll;
+  max-width: 388px;
+  border-radius: 5px;
+}
+
+.operationString {
+  color: #ff9500;
+  height: 25px;
+  font-size: 20px;
+}
+
+.currentResult {
+  height: 50px;
+  font-size: 30px;
 }

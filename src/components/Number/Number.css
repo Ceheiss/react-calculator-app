@@ -1,3 +1,6 @@
 .Number {
+  background-color: #505050;
+}
+.Number:hover {
   background-color: #888;
 }

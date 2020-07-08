@@ -9,27 +9,39 @@ import Display from '../Display/Display';
 const App = () => {
   return (
     <div className="App">
-      <h1>Calculator</h1>
-      <Display elementId="display" />
       <div className="wrapper">
-        <Number elementId="zero">0</Number>
-        <Number elementId="one">1</Number>
-        <Number elementId="two">2</Number>
-        <Number elementId="three">3</Number>
-        <Number elementId="four">4</Number>
-        <Number elementId="five">5</Number>
-        <Number elementId="six">6</Number>
-        <Number elementId="seven">7</Number>
-        <Number elementId="eight">8</Number>
-        <Number elementId="nine">9</Number>
-        <Number elementId="decimal">.</Number>
-        <Equals elementId="equals">=</Equals>
-        <Operator elementId="add">+</Operator>
-        <Operator elementId="subtract">-</Operator>
-        <Operator elementId="multiply">x</Operator>
-        <Operator elementId="divide">/</Operator>
-        <Clear elementId="clear">AC</Clear>
+        <section className="display-wrapper">
+          <Display elementId="display" />
+        </section>
+        <section className="specials-wrapper">
+          <Clear elementId="clear">AC</Clear>
+          <Equals elementId="equals">=</Equals>
+        </section>
+        <section className="numbers-wrapper">
+          <Number elementId="one">1</Number>
+          <Number elementId="two">2</Number>
+          <Number elementId="three">3</Number>
+          <Number elementId="four">4</Number>
+          <Number elementId="five">5</Number>
+          <Number elementId="six">6</Number>
+          <Number elementId="seven">7</Number>
+          <Number elementId="eight">8</Number>
+          <Number elementId="nine">9</Number>
+          <Number elementId="zero" className="zero-element">
+            0
+          </Number>
+          <Number elementId="decimal">.</Number>
+        </section>
+        <section className="operators-wrapper">
+          <Operator elementId="add">+</Operator>
+          <Operator elementId="subtract">-</Operator>
+          <Operator elementId="multiply">x</Operator>
+          <Operator elementId="divide">/</Operator>
+        </section>
       </div>
+      <p>
+        Designed and coded by <br /> <span>Cristobal Heiss</span>
+      </p>
     </div>
   );
 };

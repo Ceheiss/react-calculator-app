@@ -1,16 +1,73 @@
+body {
+  background-color: #d4d4d2;
+}
+
+.App {
+  font-family: 'Roboto', sans-serif;
+}
+
 .button {
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #333;
+  border: 2px solid #000;
+  color: white;
   cursor: pointer;
+  font-weight: bolder;
+  font-size: 20px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.button:hover {
+  border-color: white;
 }
 
 .wrapper {
   display: grid;
-  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+  grid-template-columns: auto auto auto;
   width: 400px;
-  height: 400px;
-  margin: auto;
+  background: #1c1c1c;
+  padding: 10px;
+  margin: 100px auto 25px auto;
+  box-shadow: 5px 5px #505050;
+}
+
+.display-wrapper {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.operators-wrapper {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.numbers-wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#zero {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.specials-wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+p {
+  color: #505050;
+  text-align: center;
+}
+
+p span {
+  color: #1c1c1c;
 }
