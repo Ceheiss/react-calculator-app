@@ -42,6 +42,11 @@ const App = () => {
       <p>
         Designed and coded by <br /> <span>Cristobal Heiss</span>
       </p>
+      <p>
+        <a href="https://github.com/Ceheiss/react-calculator-app">
+          <i class="fab fa-github"></i>
+        </a>
+      </p>
     </div>
   );
 };

@@ -71,3 +71,16 @@ p {
 p span {
   color: #1c1c1c;
 }
+
+a {
+  text-decoration: none;
+  color: #1c1c1c;
+}
+
+.fab {
+  transition: 0.2s linear;
+}
+
+.fab:hover {
+  transform: scale(1.3);
+}
