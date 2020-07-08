@@ -13,9 +13,11 @@ const Display = ({ elementId, operationString, lastDigit }) => {
   }
 
   return (
-    <div className="Display">
-      <div>{operationString}</div>
-      <div id={elementId}>{numberPromp || '0'}</div>
+    <div className="Display" style={{ height: '50px' }}>
+      <div style={{ color: 'orange', height: '25px' }}>{operationString}</div>
+      <div style={{ height: '25px' }} id={elementId}>
+        {numberPromp || '0'}
+      </div>
     </div>
   );
 };

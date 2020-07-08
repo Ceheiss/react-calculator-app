@@ -1,14 +1,13 @@
 import { combineReducers } from 'redux';
-import { isDoubleDots } from '../helpers/isDoubleDots/isDoubleDots';
+import { hasDoubleDots } from '../helpers/hasDoubleDots/hasDoubleDots';
 import { isStartingZeroes } from '../helpers/isStartingZeroes/isStartingZeroes';
-import { isValidOperator } from '../helpers/isValidOperator/isValidOperator';
-import { isOperator } from '../helpers/isOperator/isOperator';
+import { changeOperator } from '../helpers/changeOperator/changeOperator';
 
 const operationStringReducer = (state = '', action) => {
   switch (action.type) {
     case 'ENTER_VALUE':
       if (
-        isDoubleDots(state, action.payload) &&
+        hasDoubleDots(state, action.payload) &&
         isStartingZeroes(state, action.payload)
       ) {
         return [...state, action.payload].join('');
@@ -16,11 +15,7 @@ const operationStringReducer = (state = '', action) => {
         return state;
       }
     case 'ENTER_OPERATOR':
-      if (isValidOperator(state, action.payload)) {
-        return [...state, action.payload].join('');
-      } else {
-        return state;
-      }
+      return changeOperator(state, action.payload);
     case 'EVALUATE':
       return String(eval(action.payload));
     case 'CLEAR':
